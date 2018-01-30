@@ -11,9 +11,9 @@ import 'rxjs/add/operator/map';
 @Injectable()
 export class ProductProvider {
   
-  filter: Object = {label:''};
+  filter: any = {label:'', value: ''};
   products: any;
-  groups: any[];
+  groups: any;
 
   constructor(public http: HttpClient) {
     http.get('http://localhost:8080/comanda/getGrupos').subscribe(data =>{        
