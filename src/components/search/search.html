@@ -1,0 +1,16 @@
+<div class="wrapper">
+  <div class="col-25">
+    <button (click)="setFilter()" ion-button icon-right block class="filter-button">      
+      {{prodProv.filter.label}}
+      <ion-icon name="arrow-dropdown"></ion-icon>
+    </button>
+  </div>
+  <div class="col-75">
+    <ion-searchbar (ionInput)="getItems($event)" placeholder="Buscar Produto"></ion-searchbar>
+    
+    
+  </div>
+
+  
+  
+</div>
