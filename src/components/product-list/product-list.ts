@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ProductProvider } from '../../providers/product/product';
 
 /**
  * Generated class for the ProductListComponent component.
@@ -11,17 +12,8 @@ import { Component } from '@angular/core';
   templateUrl: 'product-list.html'
 })
 export class ProductListComponent {
-
-  products: any[] = [
-    {
-      descricao: "Super hyper blast plus advanced lanche 3.0 coom bacon do inferno de dante"
-    },
-    {
-      descricao: "Pr2"
-    }
-  ];
-
-  constructor() {    
+  
+  constructor(public prodProv: ProductProvider) {    
     
   }
 

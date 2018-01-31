@@ -1,7 +1,16 @@
 <!-- Generated template for the ProductListComponent component -->
 <ion-list >
-  <ion-item *ngFor="let product  of products">
-    {{product.descricao}}    
-    <button ion-button color="primary" item-end>Adicionar</button>
+  <ion-item *ngFor="let product  of prodProv.products | productpipe : prodProv.searchStr">        
+    <div class="wrapper clearfix">
+      <div class="item-desc">
+        {{product.description}}
+      </div>
+      <div class="item-value" *ngIf="!product.unavailable">
+        {{product.value | number : '1.2-2'}}
+      </div>
+    </div>
+     
+    <button *ngIf="!product.unavailable" ion-button color="primary" item-end>Adicionar</button>
+    <button *ngIf=" product.unavailable" ion-button color="danger" item-end>Indisp.</button>
   </ion-item>  
 </ion-list>

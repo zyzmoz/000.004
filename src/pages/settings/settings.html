@@ -1,0 +1,57 @@
+<!--
+  Generated template for the SettingsPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Configurações</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding >
+  <ion-list>
+    <ion-item>
+      <ion-label>Servidor</ion-label>
+      <ion-input [(ngModel)]="settings.server" type="text"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label >Porta</ion-label>
+      <ion-input [(ngModel)]="settings.port" type="number"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Senha Administrador</ion-label>
+      <ion-input [(ngModel)]="settings.admin" type="{{showPwd? 'text': 'password'}}"></ion-input>      
+    </ion-item>
+    <ion-item>
+      <ion-label>Mostrar Senha</ion-label>
+      <ion-checkbox [(ngModel)]="showPwd" checked="showPwd" item-end></ion-checkbox>
+    </ion-item>    
+
+    <ion-item>
+      <ion-label>Operador</ion-label>
+      <ion-input [(ngModel)]="settings.ope" type="text" ></ion-input>
+    </ion-item>       
+    <ion-item>
+      <ion-label>Pede Mesa</ion-label>
+      <ion-toggle [(ngModel)]="settings.mesa" checked=""></ion-toggle>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Ordena por Descrição</ion-label>
+      <ion-toggle [(ngModel)]="settings.desc" checked=""></ion-toggle>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Versão: 1.5a</ion-label>      
+    </ion-item>    
+  </ion-list>
+  <button (click)="save()" ion-button block>Salvar</button>
+
+</ion-content>

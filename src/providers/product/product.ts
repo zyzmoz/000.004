@@ -12,19 +12,73 @@ import 'rxjs/add/operator/map';
 export class ProductProvider {
   
   filter: any = {label:'', value: ''};
+  searchStr: string = '';
   products: any;
   groups: any;
 
-  constructor(public http: HttpClient) {
-    http.get('http://localhost:8080/comanda/getGrupos').subscribe(data =>{        
-            
-      console.log(data);   
-      this.groups = data;
-      this.filter = {label: data[0].DESCRICAO, value: data[0].CONTROLE};   
-    });
+  constructor(public http: HttpClient) {    
+    this.groups = [
+      {
+        label: 'Bebidas',
+        value: 1
+      },
+      {
+        label: 'Todos',
+        value: 0
+      },
+      {
+        label: 'Pizzas',
+        value: 2
+      },
+      {
+        label: 'Burgers',
+        value: 3
+      }
+    ]
+    this.filter = this.groups[0];
+
+    this.products = [
+      {
+        description: 'Coke',
+        ean: 789789789912,
+        value: 5.50,
+        group: 1,
+        pizza: false
+      },
+      {
+        description: 'Beer',
+        ean: 789987987321,
+        value: 5.50,
+        group: 1,        
+        unavailable: true,
+        pizza: false
+      },
+      {
+        description: 'Burger',
+        ean: 1011,
+        value: 17.50,
+        group: 3,
+        pizza: false
+      },
+      {
+        description: 'Pizza Mussarela',
+        ean: 1010,
+        value: 15.50,
+        group: 2,
+        pizza: true
+      },
+    ]
       
   }
 
+  setGroup(obj){
+    this.filter = obj;
+    //console.log(this.filter);    
+    if (this.filter.value !== 0)
+      this.products = this.products.filter(product => product.group === this.filter.value);
+  }
+
+  
 
 
 

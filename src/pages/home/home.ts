@@ -1,6 +1,7 @@
 import { Component, } from '@angular/core';
 
-import { NavController, AlertController } from 'ionic-angular';
+import { NavController, AlertController, App } from 'ionic-angular';
+import { SettingsPage } from '../../pages/settings/settings';
 
 @Component({
   selector: 'page-home',
@@ -8,7 +9,7 @@ import { NavController, AlertController } from 'ionic-angular';
 })
 export class HomePage {
 
-  constructor(public navCtrl: NavController, private ac : AlertController) {
+  constructor(public navCtrl: NavController, private ac : AlertController,private app: App) {
 
   }
 
@@ -35,7 +36,13 @@ export class HomePage {
           text: "Confirmar",
           role: "cancel",
           handler: data => {
-            if(data.password === 'abc123'){                      
+            const settings = JSON.parse(localStorage.getItem('settings'));
+            let admin;
+            if(settings)
+              admin = settings.admin;
+            if((!admin) || (data.password === admin)){    
+              this.app.getRootNav().setRoot(SettingsPage);
+              
               return true;
             }             
             return false;

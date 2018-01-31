@@ -23,6 +23,8 @@ export class SearchComponent {
 
   getItems(ev: any){
     let val = ev.target.value;
+    
+    this.prodProv.searchStr = val;
   }
 
   setFilter(){
@@ -30,8 +32,8 @@ export class SearchComponent {
     this.prodProv.groups.map((obj, index) => {
       options.push({
         type: "radio",
-        label: obj.DESCRICAO,
-        value:  obj.CONTROLE,
+        label: obj.DESCRICAO||obj.label,
+        value:  obj.CONTROLE||obj.value,
         checked: false       
       });
     });
@@ -55,7 +57,8 @@ export class SearchComponent {
             const { value, label } = options.filter((obj) => {
               return obj.value == data;
             })[0];
-            this.prodProv.filter = {value, label};
+            this.prodProv.setGroup({ value, label });
+            
           }
         }
       ]
