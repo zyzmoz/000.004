@@ -8,6 +8,8 @@ import { SearchComponent } from '../components/search/search';
 import { ProductListComponent } from '../components/product-list/product-list';
 
 import { HomePage } from '../pages/home/home';
+import { AddProductPage } from '../pages/add-product/add-product';
+import { AddPizzaPage } from '../pages/add-pizza/add-pizza';
 import { SettingsPage } from '../pages/settings/settings';
 import { TabsPage } from '../pages/tabs/tabs';
 
@@ -24,6 +26,8 @@ import { ProductPipe } from '../pipes/product-pipe';
     SearchComponent,
     ProductListComponent,
     HomePage,
+    AddProductPage,
+    AddPizzaPage,
     SettingsPage,
     TabsPage,
     ProductPipe
@@ -39,6 +43,8 @@ import { ProductPipe } from '../pipes/product-pipe';
     SearchComponent,
     ProductListComponent, 
     HomePage,
+    AddProductPage,
+    AddPizzaPage,
     SettingsPage,
     TabsPage
   ],

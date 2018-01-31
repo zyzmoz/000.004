@@ -1,0 +1,57 @@
+page-add-product {
+
+    input {
+        width: 50px;
+        height: 36px;
+        border: 1px solid #d6d6d6;
+        border-radius: 4px;
+        text-align: center;
+    }
+
+    b {
+        color: #000;
+    }
+
+    .small {
+        font-size: 9.5pt;
+    }
+
+    .item-md {
+        padding-left: 0px;
+    }
+
+    .checkbox.checkbox-md {
+        margin: 8px !important;
+    }
+
+    .left .button-md {
+        height: 30px !important;
+        //margin-top: 15px;
+    }
+    // .left .button-md {
+    //     width: 48px;
+    //     height: 48px !important;
+    //     padding: 0;
+        
+    // }
+
+    .icon {
+        font-size: 30px;
+        padding: 0;
+    }
+
+    .qty {
+        display: flex;
+    }
+
+    .left {
+        float: left;
+    }
+
+    .actions{
+        left: 0;
+        bottom: 0;
+    } 
+
+    
+}

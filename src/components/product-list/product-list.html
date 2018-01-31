@@ -5,12 +5,14 @@
       <div class="item-desc">
         {{product.description}}
       </div>
-      <div class="item-value" *ngIf="!product.unavailable">
+      <div class="item-value" *ngIf="!product.unavailable && !product.pizza">
         {{product.value | number : '1.2-2'}}
       </div>
     </div>
      
-    <button *ngIf="!product.unavailable" ion-button color="primary" item-end>Adicionar</button>
+    <button (click)="addProduct(product)" *ngIf="!product.unavailable" ion-button color="primary" item-end>
+      {{product.pizza? "Montar" : "Adicionar"}}
+    </button>
     <button *ngIf=" product.unavailable" ion-button color="danger" item-end>Indisp.</button>
   </ion-item>  
 </ion-list>

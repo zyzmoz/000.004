@@ -1,5 +1,8 @@
+import { App } from 'ionic-angular';
 import { Component } from '@angular/core';
 import { ProductProvider } from '../../providers/product/product';
+import { AddProductPage } from '../../pages/add-product/add-product';
+import { AddPizzaPage } from '../../pages/add-pizza/add-pizza';
 
 /**
  * Generated class for the ProductListComponent component.
@@ -13,8 +16,16 @@ import { ProductProvider } from '../../providers/product/product';
 })
 export class ProductListComponent {
   
-  constructor(public prodProv: ProductProvider) {    
+  constructor(public prodProv: ProductProvider, private app: App) {    
     
+  }
+
+  addProduct(obj){
+    if (obj.pizza){
+      this.app.getRootNav().setRoot(AddPizzaPage);
+    } else {
+      this.app.getRootNav().setRoot(AddProductPage);
+    }
   }
 
 }

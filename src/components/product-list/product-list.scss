@@ -5,13 +5,20 @@ product-list {
     }
 
     .item-desc{
-        width: 85%;
+        width: 80%;
         float: left;
     }
 
     .item-value {
-        width: 15%;
+        width: 20%;
         float: left;
 
+    }
+
+    button {
+        width: 77px;
+    }
+    .item-md {
+        padding-left: 0px;
     }
 }

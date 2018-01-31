@@ -61,10 +61,10 @@ export class ProductProvider {
         pizza: false
       },
       {
-        description: 'Pizza Mussarela',
-        ean: 1010,
-        value: 15.50,
-        group: 2,
+        description: 'Pizza',
+        ean: 0,
+        value: 0,
+        group: 0,
         pizza: true
       },
     ]

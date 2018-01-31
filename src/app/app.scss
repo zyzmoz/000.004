@@ -29,6 +29,24 @@
     }
 }
 
+.wrapper {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.half {
+  width: 48%;
+  
+} 
+
+.third {
+  width: 30%;
+}
+
+.center {
+  text-align: center;
+}
+
 .clearfix:after, .clearfix:before{
   content: ' ';
   display: table;

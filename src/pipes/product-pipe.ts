@@ -9,9 +9,7 @@ export class ProductPipe implements PipeTransform {
 
     transform(value: any, query: string): any {
         return query ? value.reduce((prev, next) => {
-            let item =  next['ean'].toString().includes(query);    
-            console.log(item);
-            
+            let item =  next['ean'].toString().includes(query);            
             if (next['description'].toUpperCase().includes(query.toUpperCase()) || next['ean'].toString().includes(query)) { prev.push(next); }
             return prev;
         }, []) : value;
