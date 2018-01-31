@@ -36,8 +36,22 @@ export class ProductProvider {
       }
     ]
     this.filter = this.groups[0];
+    
+    if (JSON.parse(localStorage.getItem('settings')).pizza){
+      this.products = [
+        {
+          description: 'Pizza',
+          ean: 0,
+          value: 0,
+          group: 0,
+          pizza: true
+        }
+      ]
+    } else {
+      this.products = [];
+    }
 
-    this.products = [
+    this.products = [...this.products,
       {
         description: 'Coke',
         ean: 789789789912,
@@ -60,13 +74,7 @@ export class ProductProvider {
         group: 3,
         pizza: false
       },
-      {
-        description: 'Pizza',
-        ean: 0,
-        value: 0,
-        group: 0,
-        pizza: true
-      },
+      
     ]
       
   }

@@ -21,6 +21,7 @@ export class SettingsPage {
     ope: 0,
     mesa: false,
     desc: false,
+    pizza: false,
     admin: 'admin'
   }
 
